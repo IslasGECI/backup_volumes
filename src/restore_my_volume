@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 #
+# Función que restaura el volumen de la base de datos del SIAP de una fecha dada. Formato de fecha 'yyyy-mm-dd'
+# Ejemplo: ./restore_my_volume 2021-01-11
+
 server_name="ciencia_datos@islasgeci.org"
 target_data_volume_name="siap_mysql_vol"
 backup_date=${1}

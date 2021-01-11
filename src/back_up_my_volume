@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 #
+# Función que respalda el volumen que contiene la base de datos del SIAP.
+# Ejemplo: ./back_up_my_volume
+
 server_name="ciencia_datos@islasgeci.org"
 source_data_volume_name="siap_mysql_vol"
 backup_date=$(date +%F)
