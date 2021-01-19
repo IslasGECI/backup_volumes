@@ -11,4 +11,9 @@ guardados. Después de hacer un _back up_ deberías de tener un vólumen con el 
 
 ## Respaldo en el servidor
 Para hacer un respaldo en el servidor de algún volumen local del `siap` solo deber de correr la
-instrucción 
+instrucción `./src/restore_my_volume 2021-01-19`.
+
+Para comprobar que el respaldo está en el servidor debes hacer los siguientes pasos:
+1. Paso 1
+1. Paso 2
+1. Paso 3
