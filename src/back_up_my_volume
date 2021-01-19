@@ -10,4 +10,4 @@ target_data_volume_name="${source_data_volume_name}_${backup_date}"
 
 ssh ${server_name} \
   'docker run --rm --volume '${source_data_volume_name}':/from alpine ash -c "cd /from ; tar --create --file - . "' \
-  | docker run --rm --interactive --volume ${target_data_volume_name}:/to alpine ash -c "cd /to ; tar --get --preserve-permissions --verbose --file - "
+  | docker run --rm --interactive --volume ${target_data_volume_name}:/to alpine ash -c "cd /to ; tar --extract --same-permissions --verbose --file - "
