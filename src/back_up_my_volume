@@ -9,5 +9,5 @@ backup_date=$(date +%F)
 target_data_volume_name="${source_data_volume_name}_${backup_date}"
 
 ssh ${server_name} \
-  'docker run --rm -v '${source_data_volume_name}':/from alpine ash -c "cd /from ; tar -cf - . "' \
+  'docker run --rm --volume '${source_data_volume_name}':/from alpine ash -c "cd /from ; tar --create --file - . "' \
   | docker run --rm -i -v ${target_data_volume_name}:/to alpine ash -c "cd /to ; tar -xpvf - "
