@@ -8,6 +8,6 @@ target_data_volume_name="siap_mysql_vol"
 backup_date=${1}
 source_data_volume_name="${target_data_volume_name}_${backup_date}"
 
-docker run --rm -v ${source_data_volume_name}:/from alpine ash -c "cd /from ; tar -cf - . " \
+docker run --rm --volume ${source_data_volume_name}:/from alpine ash -c "cd /from ; tar --create --file - . " \
   | ssh ${server_name} \
-  'docker run --rm -i -v '${target_data_volume_name}':/to alpine ash -c "cd /to ; tar -xpvf - " '
+  'docker run --rm --interactive --volume '${target_data_volume_name}':/to alpine ash -c "cd /to ; tar --get --preserve-permissions --verbose --file - " '
