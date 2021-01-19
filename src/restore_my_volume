@@ -6,7 +6,7 @@
 server_name="ciencia_datos@islasgeci.org"
 target_data_volume_name="siap_mysql_vol"
 backup_date=${1}
-source_data_volume_name="${source_data_volume_name}_${backup_date}"
+source_data_volume_name="${target_data_volume_name}_${backup_date}"
 
 docker run --rm -v ${source_data_volume_name}:/from alpine ash -c "cd /from ; tar -cf - . " \
   | ssh ${server_name} \
