@@ -7,7 +7,7 @@ Para hacer un respaldo local del volumen del `siap` solo debes de correr la inst
 anteriormente hayas configurado una *ssh key* para poder acceder al servidor.
 
 Con la instrucción `docker volume ls` podemos tener una lista de los volúmenes que tenemos
-guardados. Después de hacer un _back up_ deberías de tener un vólumen con el nombre:
+guardados. Después de hacer un _back up_ deberías de tener un volumen con el nombre:
 `siap_mysql_vol_fecha` donde en lugar de `fecha` estará la fecha de cuando hiciste el respaldo. 
 
 ## Respaldo en el servidor
