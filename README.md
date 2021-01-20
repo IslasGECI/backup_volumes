@@ -19,6 +19,7 @@ Para comprobar que el respaldo está en el servidor debes hacer los siguientes p
 1. Entrar al servidor con la instrucción: `ssh ciencia_datos@islasgeci.org`
 1. Enlistar los volúmenes de Docker con: `docker volume ls`. El volumen debería de aparecer como
    `siap_mysql_vol`.
+1. Para ver la fecha de creación del volumen utilizamos la instrucción `docker volume inspect siap_mysql_vol`
 
 
 ## Verificación del respaldo
