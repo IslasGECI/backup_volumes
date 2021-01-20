@@ -11,14 +11,17 @@ guardados. Después de hacer un _back up_ deberías de tener un volumen con el n
 `siap_mysql_vol_fecha` donde en lugar de `fecha` estará la fecha de cuando hiciste el respaldo. 
 
 ## Respaldo en el servidor
-Para hacer un respaldo en el servidor de algún volumen local del `siap` solo deber de correr la
-instrucción `./src/restore_my_volume 2021-01-19`.
+Para hacer un respaldo en el servidor de algún volumen local del `siap` solo debes de correr la
+instrucción `./src/restore_my_volume <FECHA>` donde en lugar de `<FECHA>`, estará la fecha de cuando
+hiciste el respaldo con formato `yyyy-mm-dd`.
 
 Para comprobar que el respaldo está en el servidor debes hacer los siguientes pasos:
 1. Entrar al servidor con la instrucción: `ssh ciencia_datos@islasgeci.org`
-1. Enlistar los voúmenes de Docker con: `docker volume ls`. El volumen debería de aparecer como
+1. Enlistar los volúmenes de Docker con: `docker volume ls`. El volumen debería de aparecer como
    `siap_mysql_vol`.
 
+
+## Verificación del respaldo
 Para verificar que el respaldo es el correcto debes seguir los siguientes pasos:
 1. Echar a andar el contenedor con el volumen restaurado:
 
