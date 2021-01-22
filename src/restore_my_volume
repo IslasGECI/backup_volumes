@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#
+# Función que restaura el volumen de la base de datos del SIAP de una fecha dada. Formato de fecha 'yyyy-mm-dd'
+# Ejemplo: ./restore_my_volume 2021-01-11
+
+server_name="ciencia_datos@islasgeci.org"
+target_data_volume_name="siap_mysql_vol"
+backup_date=${1}
+source_data_volume_name="${target_data_volume_name}_${backup_date}"
+
+docker run --rm --volume ${source_data_volume_name}:/from alpine ash -c "cd /from ; tar --create --file - . " \
+  | ssh ${server_name} \
+  'docker run --rm --interactive --volume '${target_data_volume_name}':/to alpine ash -c "cd /to ; tar --extract --same-permissions --verbose --file - " '
