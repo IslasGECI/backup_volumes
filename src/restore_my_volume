@@ -3,9 +3,9 @@
 # Función que restaura el volumen de la base de datos del SIAP de una fecha dada. Formato de fecha 'yyyy-mm-dd'
 # Ejemplo: ./restore_my_volume 2021-01-11
 
-server_name="ciencia_datos@islasgeci.org"
-target_data_volume_name="siap_mysql_vol"
-backup_date=${1}
+target_data_volume_name=${1}
+backup_date=${2}
+server_name=${3:-"ciencia_datos@islasgeci.org"}
 source_data_volume_name="${target_data_volume_name}_${backup_date}"
 
 docker run --rm --volume ${source_data_volume_name}:/from alpine ash -c "cd /from ; tar --create --file - . " \
